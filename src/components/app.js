@@ -8,16 +8,27 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <div className="row">
-           <Form />   
+      <div>
+        <div className="row mb-5">
+          <div className="col-12">
+            <nav className=" row justify-content-between navbar navbar-expand-lg navbar-light bg-light">
+           
+              <div className="col-sm-3">  
+                 <a className="navbar-brand" href="#"><h1>Exchange Rates</h1></a>
+              </div>
+              <div className="col-sm-7">
+                <Form />  
+              </div>
+          </nav>
         </div>
+      </div>
+        
         <div className="row">
           <div className="col-sm-6">
             <Table />
           </div>
           <div className="col-sm-6">
-           {/*  <Calc /> */}
+            <Calc /> 
           </div>
         </div>
       </div>

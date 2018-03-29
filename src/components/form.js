@@ -17,31 +17,31 @@ class Form extends Component{
   
   render(){
     return (
-      <form  onSubmit={ this.fetchData.bind(this) }>
-        <div className="form-row">
+      <form  onSubmit={ this.fetchData.bind(this) }  className="form-row">
+      
           
-          <div className="col-sm-2">
+          <div className="col-sm-3">
             <select className='form-control'>
               <option value="eur">EUR</option>
               <option value="usd">USD</option>
               <option value="chf">CHF</option>
               <option value="gbp">GBP</option>
             </select> 
-          </div>
+           </div>
            
-           <div className="col-sm-4">
+           <div className="col-sm-3">
             <input name='fromDate' id='fromDate' type='date'  className="form-control"/>
           </div>
           
 
-          <div className="col-sm-4">
+          <div className="col-sm-3">
             <input name="toDate" id="toDate" type='date'  className="form-control"/>
           </div>
 
-          <div className="col-sm-2">
+          <div className="col-sm-3">
             <input  type='submit' value='click' id='btn-submit' className='form-control btn btn-inline btn-success'/>
           </div>
-        </div>
+        
        
       </form>
     )
