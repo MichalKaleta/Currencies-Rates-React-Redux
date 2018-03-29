@@ -1,3 +1,20 @@
-body{
-  font-size: 16px;
+.table-striped tbody tr:hover {
+
+  cursor: pointer;
+  background-color: #bfb;
 }
+
+.table-container {
+  height: 500px;
+  overflow-y: scroll
+}
+
+a:active{
+
+background-color: #99f;
+}
+
+#activeRow{
+  background-color: #aaf;
+}
+

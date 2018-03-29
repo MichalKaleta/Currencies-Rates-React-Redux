@@ -8,35 +8,44 @@ class Table extends Component{
 
   constructor(props){
     super(props)
+
     this.props.tableData.rates=[];
   }
 
-  onRowClick(no,mid,date){
+  onRowClick(target,no,mid,date){
+
     this.props.sendToCalc(no,mid,date )
+    var lastActive = document.getElementById("activeRow")|| null;
+    if(lastActive) lastActive.removeAttribute('id');
+    target.setAttribute('id','activeRow')
   }
 
  renderRows(rate){
   return (
     <tr key={rate.effectiveDate} 
-        onClick={()=>this.props.sendToCalc(rate.no,rate.mid,rate.effectiveDate ) }  >
-
-      <td>{rate.no}</td>
-      <td>{rate.mid}</td>
-      <td>{rate.effectiveDate}</td>
+        onClick={(event)=>{
+            var target = event.currentTarget;
+            this.onRowClick(target,rate.no,rate.mid,rate.effectiveDate ) }
+           } >
+          <td>{rate.no}</td>
+          <td>{rate.mid}</td>
+          <td>{rate.effectiveDate}</td> 
     </tr>
-  )
+    )
  }
 
   render(){
     return (     
-      <table className='table table-striped table-hover'>
+      <div className='table-container'>
+      <table className='table table-striped table-hover '>
         <thead>
           <tr><th>Num.</th><th>Rate</th><th>Date</th></tr>
         </thead>
-        <tbody>
+        <tbody >
           { this.props.tableData.rates.map( rate=> this.renderRows(rate) ) }
         </tbody>
       </table>
+      </div>
     )
   }
 }
