@@ -1,6 +1,9 @@
 import React ,{Component} from 'react';
 import {connect} from 'react-redux';
- 
+import {bindActionCreators} from 'redux'
+
+import  {sendToCalc} from '../actions' 
+
 class Table extends Component{
 
   constructor(props){
@@ -8,10 +11,15 @@ class Table extends Component{
     this.props.tableData.rates=[];
   }
 
+  onRowClick(no,mid,date){
+    this.props.sendToCalc(no,mid,date )
+  }
+
  renderRows(rate){
-  console.log("aaaa")
   return (
-    <tr key={rate.effectiveDate} >
+    <tr key={rate.effectiveDate} 
+        onClick={()=>this.props.sendToCalc(rate.no,rate.mid,rate.effectiveDate ) }  >
+
       <td>{rate.no}</td>
       <td>{rate.mid}</td>
       <td>{rate.effectiveDate}</td>
@@ -32,7 +40,14 @@ class Table extends Component{
     )
   }
 }
-export default connect(state=>{ return {tableData: state.apiResponse} })(Table) 
+  
+export default connect( state=>{ 
+                              return {tableData: state.apiResponse}
+                            },
+                        dispatch=>{ 
+                              return bindActionCreators( {sendToCalc}, dispatch)
+                              }  
+                      )(Table) 
 
 /* function mapStateToProps(state){
   return {tableData: state.apiResponse}
