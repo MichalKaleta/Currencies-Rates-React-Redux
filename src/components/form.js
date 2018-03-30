@@ -15,8 +15,7 @@ class Form extends Component{
     ev.preventDefault();
     var currency = ev.target[0].value;
     var dateFrom = ev.target[1].valueAsDate.toJSON().slice(0,10);
-    var dateTo   = ev.target[2].valueAsDate.toJSON().slice(0,10);
-   
+    var dateTo   = ev.target[2].valueAsDate.toJSON().slice(0,10);  
     this.props.apiRequest('a',currency,dateFrom,dateTo)
   }
   
@@ -34,8 +33,8 @@ class Form extends Component{
            </div>
            
            <div className="col-sm-3">
-            <input name='fromDate' id='fromDate' type='date'  className="form-control"
-                    defaultValue={firstOfMonth}/>
+            <input name='fromDate' id='fromDate' type='date' className="form-control"
+                    defaultValue= { firstOfMonth }/>
           </div>
           
 
