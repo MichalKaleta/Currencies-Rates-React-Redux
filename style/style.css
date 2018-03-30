@@ -1,7 +1,7 @@
 .table-striped tbody tr:hover {
 
   cursor: pointer;
-  background-color: #bfb;
+  background-color: #dfd;
 }
 
 .table-container {
@@ -15,6 +15,9 @@ background-color: #99f;
 }
 
 #activeRow{
-  background-color: #aaf;
+  background-color: #afa;
 }
 
+textarea {
+  height: 150px;
+}

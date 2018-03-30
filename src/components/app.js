@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div className="row mb-5">
+        <div className="row mb-3">
           <div className="col-12">
             <nav className=" row justify-content-between navbar navbar-expand-lg navbar-light bg-light">
            
