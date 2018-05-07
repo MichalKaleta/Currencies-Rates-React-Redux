@@ -13,10 +13,10 @@ export default class App extends Component {
           <div className="col-12">
             <nav className=" row justify-content-between navbar navbar-expand-lg navbar-light bg-light">
            
-              <div className="col-sm-3">  
+              <div className="col-md-3">  
                  <a className="navbar-brand" href="#"><h1>Exchange Rates</h1></a>
               </div>
-              <div className="col-sm-7">
+              <div className="col-md-7">
                 <Form />  
               </div>
           </nav>
